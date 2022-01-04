@@ -1,0 +1,19 @@
+.Dialog-background {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+.Dialog-container {
+  position: absolute;
+  top: 0px;
+  background: #fff;
+  height: 200px;
+  width: 40%;
+  margin: 30%;
+  text-align: center;
+  z-index: 11;
+}
