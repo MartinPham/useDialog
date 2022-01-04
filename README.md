@@ -1,4 +1,38 @@
-# Getting Started with Create React App
+# useDialog
+
+Create Event-based dialog which supports Promise
+
+## Usage
+```jsx
+export const Example = () => {
+    const [answer, setAnswer] = useState<string | null>(null)
+    const { ask, isAsking } = useDialog()
+
+    const askNow = useCallback(async () => {
+        try {
+            const answer = await ask!('Are you ok?')
+            setAnswer(`Answered: ${answer}`)
+        } catch (error: any) {
+            setAnswer(`Error: ${error.message}`)
+        }
+    }, [ask])
+
+    return (
+        <header className='Example-header'>
+            <img src={logo} className='Example-logo' alt='logo' />
+            <button
+                onClick={() => askNow()}
+            >
+                {isAsking ? 'ASKING...' : 'ASK!'}
+            </button>
+
+            <p>
+                {answer}
+            </p>
+        </header>
+    )
+}
+```
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
